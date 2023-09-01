@@ -1,0 +1,25 @@
+
+.btn {
+    background-color: var(--color-marine-blue);
+    padding: 10px 15px;
+    color: var(--color-white);
+    border-radius: 5px;
+    cursor: pointer;
+    border-color: transparent;
+    font-weight: 500;
+    transition: background 300ms ease-in-out, color 300ms ease-in-out;
+
+    &:hover {
+      background-color: var(--color-purplish-blue);  
+    }
+
+    &--transparent{
+        background-color: transparent;
+        color: var(--color-cool-gray);
+
+        &:hover {
+            color: var(--color-marine-blue);
+            background-color: transparent;
+        }
+    }
+}

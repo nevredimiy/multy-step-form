@@ -1,0 +1,49 @@
+{
+    "monthly" : [
+        {
+            "id" : 0,
+            "name" : "Online service",
+            "desc" : "Access to multiplayer games",
+            "price" : 1,
+            "reduction" : "mo"
+        },
+        {
+            "id" : 1,
+            "name" : "Larget storage",
+            "desc" : "Extra 1TB of cloud save",
+            "price" : 2,
+            "reduction" : "mo"
+        },
+        {
+            "id" : 2,
+            "name" : "Customizable profile",
+            "desc" : "Custom theme on your profile",
+            "price" : 2,
+            "reduction" : "mo"
+        }
+    ],
+    "yearly" : [
+        {
+            "id" : 0,
+            "name" : "Online service",
+            "desc" : "Access to multiplayer games",
+            "price" : 10,
+            "reduction" : "yr"
+        },
+        {
+            "id" : 1,
+            "name" : "Larget storage",
+            "desc" : "Extra 1TB of cloud save",
+            "price" : 20,
+            "reduction" : "yr"
+        },
+        {
+            "id" : 2,
+            "name" : "Customizable profile",
+            "desc" : "Custom theme on your profile",
+            "price" : 20,
+            "reduction" : "yr"
+        }
+    ]
+    
+}

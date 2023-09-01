@@ -1,0 +1,67 @@
+$breakpoint-small: 480px;
+$breakpoint-medium: 1024px;
+$breakpoint-large: 1024px;
+
+#root {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media(min-width: 1024px) {
+      height: 100vh;
+    }
+}
+
+.App {
+  margin: 0 auto;
+  max-width: 375px;
+  display: grid;
+  grid-template-rows: 172px 1fr 80px;
+
+  @media (min-width: 1024px) {
+    grid-template-rows: 1fr 80px;
+    grid-template-columns: 275px 1fr;
+    max-width: 1440px;
+    min-height: 568px;
+    background-color: var(--color-white);
+    padding: 20px;
+  }
+}
+
+.wrapper-btn {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 0 20px;
+  background-color: var(--color-white);
+}
+
+.main {
+  &__wrapper {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    padding: 30px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    top: -73px;
+
+    @media(min-width: 1024px) {
+      top: 0;
+      width: 550px;
+    }
+  }
+
+  &__desc {
+    padding-bottom: 30px;
+  }
+
+  &__title {
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
+
+  &__text {
+    color: var(--color-cool-gray);
+  }
+}

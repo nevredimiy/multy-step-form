@@ -1,0 +1,86 @@
+.add-on {
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 15px;
+        margin-bottom: 20px;
+        border: 1px solid var(--color-light-gray);
+        border-radius: 12px;
+        position: relative;
+        cursor: pointer;
+        transition: border 300ms ease-in-out, background 300ms ease-in-out;
+
+        &:hover, &.active {
+            border-color: var(--color-purplish-blue);
+            background-color: var(--color-alabaster);
+            .add-on__checkbox {
+                border-color: var(--color-purplish-blue);
+            }
+        }
+
+        @media(min-width: 768px) {
+            padding: 20px 25px;
+        }
+    }
+
+    &__checkbox {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        margin: 0; 
+        color: currentColor;
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+        display: grid;
+        place-content: center;
+        border: 1px solid var(--color-light-gray);
+        border-radius: 4px;
+        flex-shrink: 0;
+        transition: transform 300ms ease-in-out, background 300ms ease-in-out,border 300ms ease-in-out;
+
+        &:checked {
+            background-color: var(--color-purplish-blue); 
+            border-color: var(--color-purplish-blue);            
+        }
+
+        &:checked::before {
+            transform: scale(1);
+            background-color: var(--color-white);
+        }
+
+   
+                
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            display: grid;
+            place-content: center;
+            transform: scale(0);
+            transform-origin: bottom left;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+    }
+
+    &__info {
+        flex: 1 1 auto;
+    }
+
+    &__title {
+        font-weight: 700;
+    }
+
+    &__text {
+        color: var(--color-cool-gray);
+        font-size: 14px;
+    }
+    
+    &__plan {
+        color: var(--color-purplish-blue);
+        font-size: 14px;
+    }
+}
