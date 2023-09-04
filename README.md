@@ -76,9 +76,9 @@ On other projects, I would like to explore the Redux example.
 
 ### Useful resources
 
-- [Example resource 1](https://blog.logrocket.com/build-multi-step-form-usestate-hook/) - This is an amazing article which helped me used hook useState
-- [Example resource 2](https://react.dev/reference/react/useContext) - Article about useContext
-- [Example resource 3](https://blog.webdevsimplified.com/2020-06/use-context/) - Another article about hook useContext
+- [Resource 1](https://blog.logrocket.com/build-multi-step-form-usestate-hook/) - This is an amazing article which helped me used hook useState
+- [Resource 2](https://react.dev/reference/react/useContext) - Article about useContext
+- [Resource 3](https://blog.webdevsimplified.com/2020-06/use-context/) - Another article about hook useContext
 
 
 ## Author
