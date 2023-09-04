@@ -4,7 +4,7 @@ import { dataMFContext } from '../../App';
 
 const PlanBlock = ({ data, activeClass }) => {
   
-  const { setDataTotal } = React.useContext(dataMFContext);
+  const { dataTotal, setDataTotal } = React.useContext(dataMFContext);
 
   const handleRadio = () => {
     unCheckedRadio();
@@ -23,7 +23,7 @@ const PlanBlock = ({ data, activeClass }) => {
       <img className='plan__icon' src={data.image} alt="Arcade" />
         <div className="plan__info">
         <h3 className='plan__title'>{data.plan}</h3>
-          <p className="plan__price">{`$${data.price}/${data.reduction}`}</p>
+          <p className="plan__price">{`$${data.price}/${dataTotal.reduction}`}</p>
           <p className={data.class}>2 months free</p>
         </div> 
     </div> 

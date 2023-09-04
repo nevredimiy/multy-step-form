@@ -17,6 +17,7 @@ $breakpoint-large: 1024px;
   max-width: 375px;
   display: grid;
   grid-template-rows: 172px 1fr 80px;
+  position: relative;
 
   @media (min-width: 1024px) {
     grid-template-rows: 1fr 80px;

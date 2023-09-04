@@ -1,16 +1,21 @@
 .form-person {
     
     &__block {
-        padding-top: 15px;    
+        padding-top: 15px;   
+    }
+
+    &__label-block {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        font-weight: 500;
     }
 
     label {
         display: inline;
-        font-size: 12px;
-        font-weight: 500;
     }
 
-    input {
+    &__input {
         display: block;
         width: 100%;
         box-sizing: border-box;
@@ -18,5 +23,43 @@
         border: 1px solid var(--color-cool-gray);
         border-radius: 5px;
         margin-top: 5px;
+        cursor: pointer;        
+        font-weight: 500;
+
+        &:hover {
+            border-color: var(--color-purplish-blue);
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid var(--color-purplish-blue);
+            color: var(--color-purplish-blue);
+        }
+
+        &:invalid {
+            border-color: var(--color-strawberry-red);
+            color: var(--color-strawberry-red)
+        }        
+    }
+
+    &__label-error {
+        color: var(--color-strawberry-red);
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+    }
+
+    .error {
+
+        .form-person__label-error {
+            opacity: 1;
+        }
+
+        .form-person__input {
+            border-color: var(--color-strawberry-red);
+        }
     }
 }
+
+//  .error {
+//      border-color: var(--color-strawberry-red);
+//  }

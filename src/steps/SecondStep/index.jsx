@@ -8,24 +8,29 @@ import dataAddOns from '../../assets/dataAddOns.json';
 
 const SecondStep = () => {
   const { dataTotal, setDataTotal } = React.useContext(dataMFContext);
-  const [dataBilling, setDataBilling] = React.useState(dataPlanType.monthly);
 
   let arrAddOn = dataTotal.addOn;
 
   const handleSwitch = (e) => { 
     if (e.target.checked) {
 
-      //Update array addOn
-      arrAddOn.map(item => {
-        return dataAddOns.yearly.forEach(el => {
+      dataAddOns.yearly.map(item => {
+        return arrAddOn.forEach(el => {
           if (el.id === item.id) {
-            item.price = el.price;
+            el.price = item.price;
           }
         })
-      });
+      })
+      
+      dataPlanType.yearly.forEach(el => {
 
-      setDataTotal(prevState => ({ ...prevState, optionBilling: "Yearly", reduction: "yr", billingSwitch: true, spanClassMo: '', spanClassYr: 'active', addOn : arrAddOn }));
-      setDataBilling(dataPlanType.yearly);
+        if (el.plan === dataTotal.plan) {
+          console.log(el.price)
+          setDataTotal(prevState => ({ ...prevState, planPrice: el.price }));
+        }
+      })     
+           
+      setDataTotal(prevState => ({ ...prevState, optionBilling: "Yearly", reduction: "yr", billingSwitch: true, spanClassMo: '', spanClassYr: 'active', addOn: arrAddOn, dataPlanType: dataPlanType.yearly }));
     } else {
 
       //update array addOn
@@ -36,9 +41,13 @@ const SecondStep = () => {
           }
         })
       });
-        
-      setDataTotal(prevState => ({ ...prevState, optionBilling: "Monthly", reduction: "mo", billingSwitch: false,spanClassMo: 'active', spanClassYr: '', addOn : arrAddOn }));
-      setDataBilling(dataPlanType.monthly);
+
+      dataPlanType.monthly.forEach(el => {
+        if (el.plan === dataTotal.plan) {
+          setDataTotal(prevState => ({ ...prevState, planPrice: el.price }));
+        }
+      })           
+      setDataTotal(prevState => ({ ...prevState, optionBilling: "Monthly", reduction: "mo", billingSwitch: false, spanClassMo: 'active', spanClassYr: '', addOn : arrAddOn, dataPlanType: dataPlanType.monthly }));
     }
   }  
 
@@ -49,10 +58,10 @@ const SecondStep = () => {
       <div className='plan'>
 
         {
-          dataBilling.map((item) => {
+          dataTotal.dataPlanType.map((item) => {
             let activeClass = '';
             if (item.plan === dataTotal.plan) {
-              activeClass = 'active'
+              activeClass = 'active';
             } 
             return <PlanBlock key={item.id} data={item} activeClass={activeClass} />
           })
